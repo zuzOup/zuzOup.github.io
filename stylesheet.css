@@ -91,6 +91,17 @@ article > section {
   color: #fd8a7d;
 }
 
+.article_title_dotOveri {
+  display: flex;
+  top: -5.6vw;
+  left: 46.4vw;
+  position: relative;
+  width: 0.8vw;
+  height: 0.8vw;
+  background-color: #ffc501;
+  border-radius: 100%;
+}
+
 #article_title > p {
   width: 70%;
   margin: 0 auto;

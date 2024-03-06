@@ -1,3 +1,13 @@
+console.log(
+  "",
+  "height " + window.innerHeight + "px",
+  "\n",
+  "\n",
+  "width " + window.innerWidth + "px"
+);
+
+/*header disapearing on scroll*/
+
 const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
@@ -16,6 +26,8 @@ window.addEventListener("scroll", () => {
     header.classList.remove("headerHidden");
   }
 });
+
+/*word rotate*/
 
 const changeWord = document.getElementById("article_title_span");
 const wait = (ms) => new Promise((res) => setTimeout(res, ms));
