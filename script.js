@@ -29,6 +29,14 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
+
+
+
+
+
+
+
 /*word rotate*/
 
 const changeWord = document.getElementById("article_title_span");

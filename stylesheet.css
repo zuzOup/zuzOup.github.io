@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -35,6 +39,65 @@ header {
   box-shadow: none;
 }
 
+nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  justify-content: end;
+  align-items: center;
+}
+
+#nav_ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  list-style-type: none;
+}
+
+#nav_ul > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 0.8vw;
+}
+
+.nav_links {
+  all: unset;
+  margin: 0 0.4vw;
+  color: #005249;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 500;
+  font-size: 1vw;
+  transition: text-shadow 0.1s linear;
+}
+
+.nav_links:hover {
+  cursor: pointer;
+  text-shadow: 0 0 0.02px #005249;
+}
+
+.nav_dots {
+  height: 100%;
+  position: relative;
+
+  margin: 0 0.05vw;
+  transform: translateY(0.05vw);
+}
+
+.nav_dots1 {
+  background-color: #ffc2b1 !important;
+}
+
+.nav_dots2 {
+  background-color: #ffbc84 !important;
+}
+
+.nav_dots2 {
+  background-color: #ffbe51 !important;
+}
 /*Main*/
 
 main {
@@ -66,7 +129,7 @@ article > section {
   flex-direction: column;
   justify-content: start;
 
-  height: 85vh;
+  height: 90vh;
 }
 
 #article_title > * {
@@ -172,6 +235,25 @@ article > section {
 }
 
 /*Article - About Me*/
+#article_aboutMe {
+  height: 90vh;
+  padding: 5vh 0;
+
+  border: #005249 1px solid;
+}
+
+/*Article - Projects*/
+#article_projects {
+  padding: 5vh 0;
+}
+
+/*Article - Contact*/
+#article_contact {
+  height: 90vh;
+  padding: 5vh 0;
+
+  border: #005249 1px solid;
+}
 
 /*Aside*/
 
