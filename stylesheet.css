@@ -137,25 +137,22 @@ article > section {
     0px 0.5px 0 #ad9462, -0.5px 0px 0 #ad9462, 0px -0.5px 0 #ad9462;
 }
 
-#article_title_span > * {
-  transition: all 1s ease-in-out;
-  position: absolute;
+.article_title_span_0 {
+  color: #ffbc84;
 }
-
-.article_title_span_js {
-  color: #ffc501;
-}
-
-.article_title_span_html {
+.article_title_span_1 {
   color: #ffbe51;
 }
 
-.article_title_span_css {
-  color: #ffbc84;
+.article_title_span_2 {
+  color: #ffc501;
 }
-
-.article_title_span_react {
+.article_title_span_3 {
   color: #ffc2b1;
+}
+#article_title_span > * {
+  transition: all 1s ease-in-out;
+  position: absolute;
 }
 
 .article_title_span_middle {
