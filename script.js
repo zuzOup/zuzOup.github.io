@@ -50,6 +50,7 @@ function rotateWords() {
   let i = 0;
 
   setInterval(async () => {
+    removeExtra();
     i + 1 === rotate.content.length ? (i = 0) : i++;
 
     const rotStart = Array.from(
