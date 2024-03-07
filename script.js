@@ -1,10 +1,14 @@
-console.log(
-  "",
-  "height " + window.innerHeight + "px",
-  "\n",
-  "\n",
-  "width " + window.innerWidth + "px"
-);
+function resize() {
+  console.log(
+    "",
+    "height " + window.innerHeight + "px",
+    "\n",
+    "\n",
+    "width " + window.innerWidth + "px"
+  );
+}
+
+resize();
 
 const wait = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -28,14 +32,6 @@ window.addEventListener("scroll", () => {
     header.classList.remove("headerHidden");
   }
 });
-
-
-
-
-
-
-
-
 
 /*word rotate*/
 
@@ -87,3 +83,21 @@ function rotateWords() {
 }
 
 rotateWords();
+
+/*Picture Shift */
+
+const photo = document.getElementById("profile_photo");
+const frame1 = document.getElementById("photo_frame1");
+const frame2 = document.getElementById("photo_frame2");
+
+photo.addEventListener("mouseenter", () => {
+  photo.classList.add("photo_active");
+  frame1.classList.add("frame1_active");
+  frame2.classList.add("frame2_active");
+});
+
+photo.addEventListener("mouseleave", () => {
+  photo.classList.remove("photo_active");
+  frame1.classList.remove("frame1_active");
+  frame2.classList.remove("frame2_active");
+});
