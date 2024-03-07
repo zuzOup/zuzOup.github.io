@@ -228,9 +228,24 @@ article > section {
   font-weight: 300;
 }
 
-#article_title > a {
-  border: #005249 1px solid;
-  margin: 2vh auto 0 auto;
+#article_title_link {
+  font-size: 0.9vw;
+  font-weight: 600;
+  border: var(--darkGreen) 1px solid;
+  border-radius: 0.6vw;
+  margin: 6vh auto 0 auto;
+  padding: 0.2vw 0.45vw;
+
+  text-shadow: none;
+  background-color: var(--beige);
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+#article_title_link:hover {
+  text-shadow: 0 0 0.01px var(--darkGreen);
+
+  background: linear-gradient(180deg, var(--beige) 54%, var(--yellowPink3) 100%);
 }
 
 .article_title_spec {
@@ -250,6 +265,7 @@ article > section {
   letter-spacing: 1px;
 
   font-weight: 700;
+  /*https://html-css-js.com/css/generator/text-shadow/*/
   text-shadow: 0.5px 0.5px 0 var(--brown), 0.5px -0.5px 0 var(--brown),
     -0.5px 0.5px 0 var(--brown), -0.5px -0.5px 0 var(--brown), 0.5px 0px 0 var(--brown),
     0px 0.5px 0 var(--brown), -0.5px 0px 0 var(--brown), 0px -0.5px 0 var(--brown);
@@ -329,7 +345,7 @@ article * h2 {
   height: 90vh;
   padding: 5vh 0;
 
-  border: var(--darkGreen) 1px solid;
+  border-bottom: var(--darkGreen) 1px solid;
 }
 
 .article_dots_aboutMe > * {
@@ -340,9 +356,24 @@ article * h2 {
   display: flex;
 }
 
+.article_aboutMe_text {
+  display: flex;
+  flex-direction: column;
+  padding: 5vw 5vw 0 2vw;
+}
+
+.article_aboutMe_text > p {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 1.2vw;
+  color: var(--darkGreen);
+  text-align: justify;
+  line-height: 1.4;
+}
+
 .article_aboutMe_photo > * {
   /*https://codepen.io/christopherware/pen/OZjZXN*/
-  /*https://10015.io/tools/css-background-pattern-generator*/
+
   position: relative;
   width: 18vw;
   height: 24vw;
@@ -378,6 +409,7 @@ article * h2 {
   z-index: 5;
   transform: rotate(12deg);
 
+  /*https://10015.io/tools/css-background-pattern-generator*/
   background: calc(0.9 * 0.8125vw) calc(0.9 * 0.8125vw) / calc(2 * 0.8125vw)
       calc(2 * 0.8125vw) conic-gradient(at 20% 20%, #0000 75%, var(--darkGreen) 0),
     calc(-0.1 * 0.8125vw) calc(-0.1 * 0.8125vw) / calc(2 * 0.8125vw) calc(2 * 0.8125vw)
@@ -403,6 +435,7 @@ article * h2 {
   z-index: 0;
   transform: rotate(-13deg);
 
+  /*https://10015.io/tools/css-background-pattern-generator*/
   background-image: radial-gradient(
       var(--yellowPink1) calc(1vw * 0.15625),
       transparent calc(1vw * 0.15625)
