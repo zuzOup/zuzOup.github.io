@@ -84,11 +84,27 @@ function rotateWords() {
 
 rotateWords();
 
-/*Picture Shift */
+/*Button unload*/
+
+const title_button = document.getElementById("article_title_link");
+
+title_button.addEventListener("mouseout", (e) => {
+  e.target.classList.add("article_title_link_out");
+  e.target.addEventListener(
+    "animationend",
+    () => {
+      e.target.classList.remove("article_title_link_out");
+    },
+    { once: true }
+  );
+});
+
+/*Picture Shift  + cursor sparkle */
 
 const photo = document.getElementById("profile_photo");
 const frame1 = document.getElementById("photo_frame1");
 const frame2 = document.getElementById("photo_frame2");
+const cursor = document.getElementById("cursor_sparkle");
 
 photo.addEventListener("mouseenter", () => {
   photo.classList.add("photo_active");
@@ -100,4 +116,12 @@ photo.addEventListener("mouseleave", () => {
   photo.classList.remove("photo_active");
   frame1.classList.remove("frame1_active");
   frame2.classList.remove("frame2_active");
+
+  cursor.classList.remove("cursor_active");
+});
+
+photo.addEventListener("mousemove", (e) => {
+  cursor.style.top = `${e.pageY - 8}px`;
+  cursor.style.left = `${e.pageX + 4}px`;
+  cursor.classList.add("cursor_active");
 });

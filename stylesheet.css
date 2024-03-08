@@ -235,6 +235,7 @@ article > section {
   border-radius: 0.6vw;
   margin: 6vh auto 0 auto;
   padding: 0.2vw 0.45vw;
+  text-decoration: none;
 
   text-shadow: none;
   background-color: var(--beige);
@@ -245,7 +246,87 @@ article > section {
 #article_title_link:hover {
   text-shadow: 0 0 0.01px var(--darkGreen);
 
-  background: linear-gradient(180deg, var(--beige) 54%, var(--yellowPink3) 100%);
+  animation: gradient 0.5s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+  0% {
+    background: linear-gradient(180deg, var(--beige) 100%, var(--yellowPink3) 100%);
+  }
+  10% {
+    background: linear-gradient(180deg, var(--beige) 95.5%, var(--yellowPink3) 100%);
+  }
+  20% {
+    background: linear-gradient(180deg, var(--beige) 91%, var(--yellowPink3) 100%);
+  }
+  30% {
+    background: linear-gradient(180deg, var(--beige) 86.5%, var(--yellowPink3) 100%);
+  }
+  40% {
+    background: linear-gradient(180deg, var(--beige) 82%, var(--yellowPink3) 100%);
+  }
+  50% {
+    background: linear-gradient(180deg, var(--beige) 77.5%, var(--yellowPink3) 100%);
+  }
+  60% {
+    background: linear-gradient(180deg, var(--beige) 73%, var(--yellowPink3) 100%);
+  }
+  70% {
+    background: linear-gradient(180deg, var(--beige) 68.5%, var(--yellowPink3) 100%);
+  }
+  80% {
+    background: linear-gradient(180deg, var(--beige) 64%, var(--yellowPink3) 100%);
+  }
+  90% {
+    background: linear-gradient(180deg, var(--beige) 59.5%, var(--yellowPink3) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, var(--beige) 55%, var(--yellowPink3) 100%);
+  }
+}
+
+.article_title_link_out {
+  animation: gradient-out 0.7s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gradient-out {
+  0% {
+    background: linear-gradient(180deg, var(--beige) 55%, var(--yellowPink3) 100%);
+  }
+  10% {
+    background: linear-gradient(180deg, var(--beige) 59.5%, var(--yellowPink3) 100%);
+  }
+  20% {
+    background: linear-gradient(180deg, var(--beige) 64%, var(--yellowPink3) 100%);
+  }
+  30% {
+    background: linear-gradient(180deg, var(--beige) 68.5%, var(--yellowPink3) 100%);
+  }
+  40% {
+    background: linear-gradient(180deg, var(--beige) 73%, var(--yellowPink3) 100%);
+  }
+  50% {
+    background: linear-gradient(180deg, var(--beige) 77.5%, var(--yellowPink3) 100%);
+  }
+  60% {
+    background: linear-gradient(180deg, var(--beige) 82%, var(--yellowPink3) 100%);
+  }
+  70% {
+    background: linear-gradient(180deg, var(--beige) 86.5%, var(--yellowPink3) 100%);
+  }
+  80% {
+    background: linear-gradient(180deg, var(--beige) 91%, var(--yellowPink3) 100%);
+  }
+  90% {
+    background: linear-gradient(180deg, var(--beige) 95.5%, var(--yellowPink3) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, var(--beige) 100%, var(--yellowPink3) 100%);
+  }
 }
 
 .article_title_spec {
@@ -359,16 +440,38 @@ article * h2 {
 .article_aboutMe_text {
   display: flex;
   flex-direction: column;
-  padding: 5vw 5vw 0 2vw;
+  padding: 1.5vw 5vw 0 2vw;
 }
 
-.article_aboutMe_text > p {
+.article_aboutMe_text > p,
+.article_aboutMe_text a,
+.article_aboutMe_text a > span {
   font-family: var(--font);
   font-weight: 400;
   font-size: 1.2vw;
   color: var(--darkGreen);
   text-align: justify;
   line-height: 1.4;
+}
+
+.article_aboutMe_text a {
+  text-decoration: none;
+
+  font-weight: 800;
+
+  transition: all 0.08s linear;
+}
+
+.article_aboutMe_text a:hover {
+  color: var(--pink);
+}
+
+.article_aboutMe_here {
+  font-weight: 600 !important;
+}
+
+.article_aboutMe_here:hover {
+  color: var(--yellow) !important;
 }
 
 .article_aboutMe_photo > * {
@@ -453,6 +556,27 @@ article * h2 {
   transform: rotate(-15deg) !important;
   left: 3.1vw !important;
   top: -53.7vw;
+}
+
+#cursor_sparkle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 0;
+  top: 0;
+  z-index: 15;
+  visibility: hidden;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(./images/sparkle.svg);
+
+  transition: none;
+}
+
+.cursor_active {
+  visibility: visible !important;
 }
 
 /*Article - Projects*/
@@ -622,13 +746,13 @@ aside > span > ul {
 }
 
 #aside_link_github {
-  background-image: url("./images/button_github.png");
+  background-image: url("./images/button_github.svg");
 }
 #aside_link_codepen {
-  background-image: url("./images/button_codepen.png");
+  background-image: url("./images/button_codepen.svg");
 }
 #aside_link_linkedin {
-  background-image: url("./images/button_linkedin.png");
+  background-image: url("./images/button_linkedin.svg");
 }
 
 /*Aside - right*/
