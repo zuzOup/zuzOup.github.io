@@ -425,8 +425,6 @@ article * h2 {
 #article_aboutMe {
   height: 90vh;
   padding: 5vh 0;
-
-  border-bottom: var(--darkGreen) 1px solid;
 }
 
 .article_dots_aboutMe > * {
@@ -472,6 +470,54 @@ article * h2 {
 
 .article_aboutMe_here:hover {
   color: var(--yellow) !important;
+}
+
+.article_aboutMe_stack {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5vw;
+}
+
+.article_aboutMe_stack li {
+  width: 3vw;
+  height: 3vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.stack1 {
+  background-image: url(./images/stack_svg/1.svg);
+}
+.stack2 {
+  background-image: url(./images/stack_svg/2.svg);
+}
+.stack3 {
+  background-image: url(./images/stack_svg/3.svg);
+}
+.stack4 {
+  background-image: url(./images/stack_svg/4.svg);
+}
+.stack5 {
+  background-image: url(./images/stack_svg/5.svg);
+}
+.stack6 {
+  background-image: url(./images/stack_svg/6.svg);
+}
+.stack7 {
+  background-image: url(./images/stack_svg/7.svg);
+}
+.stack8 {
+  background-image: url(./images/stack_svg/8.svg);
+}
+
+.article_aboutMe_photo {
+  padding-top: 2.2vw;
+  height: 100%;
 }
 
 .article_aboutMe_photo > * {

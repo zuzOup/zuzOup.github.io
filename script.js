@@ -16,7 +16,7 @@ const wait = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const header = document.getElementById("header");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", async () => {
   if (this.scrollY > 2) {
     header.classList.add("headerActive");
   } else if (this.scrollY === 0) {
