@@ -33,8 +33,13 @@ function GridCell({ index, path, name, item }) {
 
   return (
     <>
-      <button onMouseEnter={hover} onMouseLeave={hoverClear} onClick={handleClickButton}>
-        <img src={src} alt={alt}></img>
+      <button
+        onMouseEnter={hover}
+        onMouseLeave={hoverClear}
+        onClick={handleClickButton}
+        className="gridCell"
+      >
+        <img src={src} alt={alt} className="imgCell"></img>
         <Cover name={name} item={item} isHovered={isHovered} />
       </button>
       {showModal &&

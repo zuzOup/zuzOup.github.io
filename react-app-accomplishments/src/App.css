@@ -9,26 +9,33 @@
 
 button {
   all: unset;
-
+  overflow: hidden;
   cursor: pointer;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-
-  width: 16vw;
-  height: 12vw;
-
-  overflow: hidden;
-
-  border: 1px var(--darkGreen) solid;
 }
 
 img {
   width: 100%;
-  min-width: 16vw;
   height: 100%;
-  min-height: 12vw;
+}
+
+button.gridCell {
+  width: 16vw;
+  height: 12vw;
+
+  background-image: linear-gradient(to left, var(--yellowPink3), var(--yellowPink1));
+  border-radius: 2px;
+  padding: 0.1vw;
+  box-sizing: border-box;
+}
+
+img.imgCell {
+  width: 99%;
+  height: 99%;
+  margin: 0.07vw;
 }
 
 .cover_text {
