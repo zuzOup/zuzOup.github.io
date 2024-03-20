@@ -32,10 +32,16 @@ button.gridCell {
   box-sizing: border-box;
 }
 
+img.imgCell.loading {
+  opacity: 0;
+  transition: all 0.1s;
+}
+
 img.imgCell {
   width: 99%;
   height: 99%;
   margin: 0.07vw;
+  opacity: 1;
 }
 
 .cover_text {
