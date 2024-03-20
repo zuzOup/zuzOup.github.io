@@ -107,9 +107,7 @@ h5 {
   width: 86vw;
   height: 100vh;
   background-color: var(--beige);
-  
 }
-
 
 .modal_inner {
   position: relative;
@@ -138,7 +136,7 @@ h5 {
   float: right;
 
   background-color: var(--yellowPink3);
-  background-image: url("close.svg");
+  background-image: url("./close.svg");
 
   transform: translateY(-2vw);
   transition: transform 300ms, background-color 0.1s, margin-top 0.1s;
@@ -177,7 +175,7 @@ h5 {
 
   background-color: var(--yellowPink2);
 
-  background-image: url("arrow.svg");
+  background-image: url("./arrow.svg");
 
   transition: width 0.1s, height 0.1s, margin 0.1s, transform 1s;
 }
