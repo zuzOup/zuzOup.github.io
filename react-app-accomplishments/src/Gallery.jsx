@@ -15,19 +15,20 @@ class Gallery extends React.Component {
     const arrow = this.props.arrow;
     const modalActive = this.props.modalActive;
     const index = this.props.index;
+    const timeout = 1100;
 
     return (
       <TransitionGroup
         component="div"
-        className={"modal_imgContainer" + modalActive}
+        className={`modal_imgContainer ${modalActive}`}
         childFactory={(child) =>
           React.cloneElement(child, {
             classNames: arrow ? "right-to-left" : "left-to-right",
-            timeout: 1100,
+            timeout: timeout,
           })
         }
       >
-        <CSSTransition classNames="right-to-left" key={index} timeout={1100}>
+        <CSSTransition classNames="right-to-left" key={index} timeout={timeout}>
           <img
             src={`./certificates/${list[index].path}.png`}
             alt={`${list[index].name} - ${list[index].item}`}

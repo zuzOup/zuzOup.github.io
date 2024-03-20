@@ -8,6 +8,7 @@ import "./App.css";
 
 class App extends React.PureComponent {
   render() {
+    
     return list.map((certificate, i) => (
       <GridCell
         key={certificate.path}

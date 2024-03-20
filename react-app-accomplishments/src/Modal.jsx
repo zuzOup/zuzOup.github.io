@@ -19,7 +19,7 @@ function Modal({ index, onClose }) {
         onClose();
       }
     }
-    setModalActive(" active");
+    setModalActive("active");
 
     window.addEventListener("keydown", handleKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,24 +42,14 @@ function Modal({ index, onClose }) {
 
   function leftButton() {
     setImgPath((currentImgPath) => {
-      let newImgPath;
-      currentImgPath === 0
-        ? (newImgPath = list.length - 1)
-        : (newImgPath = currentImgPath - 1);
-
-      return newImgPath;
+      return currentImgPath === 0 ? list.length - 1 : currentImgPath - 1;
     });
     setArrow(true);
   }
 
   function rightButton() {
     setImgPath((currentImgPath) => {
-      let newImgPath;
-      currentImgPath === list.length - 1
-        ? (newImgPath = 0)
-        : (newImgPath = currentImgPath + 1);
-
-      return newImgPath;
+      return currentImgPath === list.length - 1 ? 0 : currentImgPath + 1;
     });
 
     setArrow(false);
@@ -72,22 +62,22 @@ function Modal({ index, onClose }) {
 
   return (
     <div className="modal" id="modal">
-      <div className={"modal_inner" + modalActive} id="modal_inner">
+      <div className={`modal_inner ${modalActive}`} id="modal_inner">
         <span onClick={outsideModalClick}>
           <button
             id="modal_button_left"
-            className={"modal_button_arrow" + modalActive}
+            className={`modal_button_arrow ${modalActive}`}
             onClick={leftButton}
           ></button>
           <Gallery index={imgPath} arrow={arrow} modalActive={modalActive} />
           <button
             id="modal_button_right"
-            className={"modal_button_arrow" + modalActive}
+            className={`modal_button_arrow ${modalActive}`}
             onClick={rightButton}
           ></button>
         </span>
         <button
-          className={"modal_button_close" + modalActive}
+          className={`modal_button_close ${modalActive}`}
           onClick={buttonOnClose}
         ></button>
       </div>

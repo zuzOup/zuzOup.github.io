@@ -18,7 +18,6 @@ const list = [
   new I(9, "Coursera", "Bootstrap"),
   new I(10, "Coursera", "Tailwind"),
   new I(11, "Coursera", "Jest"),
-  new I(1, "Codecademy", "Front-End Engineer"),
 ];
 
 export default list;
