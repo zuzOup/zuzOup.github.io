@@ -13,6 +13,8 @@
 
 html {
   scroll-behavior: smooth;
+
+  overflow-x: hidden;
 }
 
 body {
@@ -427,7 +429,8 @@ article * h2 {
   padding: 5vh 0;
 }
 
-.article_dots_aboutMe > * {
+.article_dots_aboutMe > *,
+.article_dots_archive > * {
   background-color: var(--yellowPink3) !important;
 }
 
@@ -644,6 +647,7 @@ article * h2 {
 .article_dots_contact > * {
   background-color: var(--yellowPink1) !important;
 }
+
 /*Aside*/
 
 aside {

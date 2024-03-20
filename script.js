@@ -35,93 +35,143 @@ window.addEventListener("scroll", async () => {
 
 /*word rotate*/
 
-const changeWord = document.getElementById("article_title_span");
+const page = window.location.pathname.split("/").pop();
 
-function rotateWords() {
-  const rotate = {
-    content: ["CSS", "JS", "REACT", "HTML"],
-    time1: 2000,
-    time2: 1000,
-  };
+if (page === "index.html") {
+  const changeWord = document.getElementById("article_title_span");
 
-  function removeExtra() {
-    const arr = Array.from(
-      changeWord.getElementsByClassName("article_title_span_middle")
-    );
-    if (arr.length > 1) arr[0].remove();
+  function rotateWords() {
+    const rotate = {
+      content: ["CSS", "JS", "REACT", "HTML"],
+      time1: 2000,
+      time2: 1000,
+    };
+
+    function removeExtra() {
+      const arr = Array.from(
+        changeWord.getElementsByClassName("article_title_span_middle")
+      );
+      if (arr.length > 1) arr[0].remove();
+    }
+
+    let i = 0;
+
+    setInterval(async () => {
+      removeExtra();
+      i + 1 === rotate.content.length ? (i = 0) : i++;
+
+      const rotStart = Array.from(
+        changeWord.getElementsByClassName("article_title_span_middle")
+      )[0];
+
+      const rotEnd = document.createElement("span");
+      rotEnd.classList.add("article_title_span_under");
+      rotEnd.classList.add(`article_title_span_${i}`);
+      rotEnd.innerHTML = rotate.content[i];
+
+      changeWord.append(rotEnd);
+
+      await wait(rotate.time1);
+
+      rotStart.classList.remove("article_title_span_middle");
+      rotStart.classList.add("article_title_span_top");
+
+      rotEnd.classList.remove("article_title_span_under");
+      rotEnd.classList.add("article_title_span_middle");
+
+      await wait(rotate.time2);
+      rotStart.remove();
+      removeExtra();
+    }, rotate.time1 + rotate.time2);
   }
 
-  let i = 0;
+  rotateWords();
 
-  setInterval(async () => {
-    removeExtra();
-    i + 1 === rotate.content.length ? (i = 0) : i++;
+  /*Button unload*/
 
-    const rotStart = Array.from(
-      changeWord.getElementsByClassName("article_title_span_middle")
-    )[0];
+  const title_button = document.getElementById("article_title_link");
 
-    const rotEnd = document.createElement("span");
-    rotEnd.classList.add("article_title_span_under");
-    rotEnd.classList.add(`article_title_span_${i}`);
-    rotEnd.innerHTML = rotate.content[i];
+  title_button.addEventListener("mouseout", (e) => {
+    e.target.classList.add("article_title_link_out");
+    e.target.addEventListener(
+      "animationend",
+      () => {
+        e.target.classList.remove("article_title_link_out");
+      },
+      { once: true }
+    );
+  });
 
-    changeWord.append(rotEnd);
+  /*Picture Shift  + cursor sparkle */
 
-    await wait(rotate.time1);
+  const photo = document.getElementById("profile_photo");
+  const frame1 = document.getElementById("photo_frame1");
+  const frame2 = document.getElementById("photo_frame2");
+  const cursor = document.getElementById("cursor_sparkle");
 
-    rotStart.classList.remove("article_title_span_middle");
-    rotStart.classList.add("article_title_span_top");
+  photo.addEventListener("mouseenter", () => {
+    photo.classList.add("photo_active");
+    frame1.classList.add("frame1_active");
+    frame2.classList.add("frame2_active");
+  });
 
-    rotEnd.classList.remove("article_title_span_under");
-    rotEnd.classList.add("article_title_span_middle");
+  photo.addEventListener("mouseleave", () => {
+    photo.classList.remove("photo_active");
+    frame1.classList.remove("frame1_active");
+    frame2.classList.remove("frame2_active");
 
-    await wait(rotate.time2);
-    rotStart.remove();
-    removeExtra();
-  }, rotate.time1 + rotate.time2);
+    cursor.classList.remove("cursor_active");
+  });
+
+  photo.addEventListener("mousemove", (e) => {
+    cursor.style.top = `${e.pageY - 8}px`;
+    cursor.style.left = `${e.pageX + 4}px`;
+    cursor.classList.add("cursor_active");
+  });
 }
 
-rotateWords();
+/*archive*/
 
-/*Button unload*/
+const archiveButtons = Array.from(document.getElementsByClassName("archive_button"));
 
-const title_button = document.getElementById("article_title_link");
+archiveButtons.forEach((button) => {
+  const divCover = button.querySelector(".archive_div_cover");
+  const div = button.querySelector(".archive_div");
 
-title_button.addEventListener("mouseout", (e) => {
-  e.target.classList.add("article_title_link_out");
-  e.target.addEventListener(
-    "animationend",
-    () => {
-      e.target.classList.remove("article_title_link_out");
-    },
-    { once: true }
-  );
+  let active = false;
+  button.addEventListener("mouseenter", async (e) => {
+    active = true;
+    divCover.classList.add("archive_div_cover_active");
+
+    await wait(300);
+
+    if (active === true) {
+      div.classList.add("archive_div_active");
+    }
+  });
+  button.addEventListener("mouseleave", () => {
+    active = false;
+    divCover.classList.remove("archive_div_cover_active");
+    div.classList.remove("archive_div_active");
+  });
+
+  button.addEventListener("click", (e) => {
+    if (e.target.tagName.toLowerCase() === "a") {
+      return;
+    }
+
+    e.stopPropagation();
+
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+
+    modal.innerHTML = `<button onclick="ble()" class="cancelButton">X</button><img src=${e.currentTarget.dataset.img} alt="certificate"/>`;
+
+    document.body.append(modal);
+  });
 });
 
-/*Picture Shift  + cursor sparkle */
-
-const photo = document.getElementById("profile_photo");
-const frame1 = document.getElementById("photo_frame1");
-const frame2 = document.getElementById("photo_frame2");
-const cursor = document.getElementById("cursor_sparkle");
-
-photo.addEventListener("mouseenter", () => {
-  photo.classList.add("photo_active");
-  frame1.classList.add("frame1_active");
-  frame2.classList.add("frame2_active");
-});
-
-photo.addEventListener("mouseleave", () => {
-  photo.classList.remove("photo_active");
-  frame1.classList.remove("frame1_active");
-  frame2.classList.remove("frame2_active");
-
-  cursor.classList.remove("cursor_active");
-});
-
-photo.addEventListener("mousemove", (e) => {
-  cursor.style.top = `${e.pageY - 8}px`;
-  cursor.style.left = `${e.pageX + 4}px`;
-  cursor.classList.add("cursor_active");
-});
+function ble() {
+  const modal = document.querySelector(".modal");
+  modal.remove();
+}

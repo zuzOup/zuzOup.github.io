@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Zuzana O. - Accomplishments</title>
+
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
+  </head>
+  <body>
+    <header id="header" class="headerTop">
+      <nav>
+        <a href="https://zuzoup.github.io/" class="homebutton">home</a>
+        <ul id="nav_ul">
+          <li>
+            <span class="smallDot nav_dots nav_dots1"></span>
+            <a href="https://zuzoup.github.io/#article_aboutMe" class="nav_links"
+              >About me</a
+            >
+            <span class="smallDot nav_dots nav_dots1"></span>
+          </li>
+          <li>
+            <span class="smallDot nav_dots nav_dots2"></span>
+            <a href="https://zuzoup.github.io/#article_projects" class="nav_links"
+              >Projects</a
+            >
+            <span class="smallDot nav_dots nav_dots2"></span>
+          </li>
+          <li>
+            <span class="smallDot nav_dots nav_dots3"></span>
+            <a href="https://zuzoup.github.io/#article_contact" class="nav_links"
+              >Contact</a
+            >
+            <span class="smallDot nav_dots nav_dots3"></span>
+          </li>
+          <li>
+            <a id="nav_resume" href="./public/CV_ZuzanaOupicka.pdf" target="_blank"
+              >Resume</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <aside id="aside_left">
+        <span>
+          <div class="aside_dot">
+            <span class="smallDot"></span><span class="bigDot"></span>
+          </div>
+          <ul>
+            <li id="aside_link_github" class="aside_left_link">
+              <a href="https://github.com/zuzOup" target="”_blank”"></a>
+            </li>
+
+            <li id="aside_link_linkedin" class="aside_left_link">
+              <a
+                href="https://www.linkedin.com/in/zuzana-oupick%C3%A1-746a6128b/"
+                target="”_blank”"
+              ></a>
+            </li>
+            <li id="aside_link_codepen" class="aside_left_link">
+              <a href="https://codepen.io/zuzOup" target="”_blank”"></a>
+            </li>
+          </ul>
+          <div class="aside_line">
+            <span class="line">
+              <span class="drop_top"></span>
+              <span class="drop_second_right"></span>
+              <span class="drop_second_left"></span>
+              <span class="drop_third_right"></span>
+              <span class="drop_third_left"></span>
+            </span>
+            <span class="smallDot"></span>
+            <span class="bigDot"></span>
+            <span class="smallDot"></span>
+          </div>
+        </span>
+      </aside>
+      <article>
+        <section id="article_archive">
+          <span class="article_h2_span">
+            <div class="article_dots article_dots_archive">
+              <span class="smallDot"></span>
+              <span class="bigDot"></span>
+            </div>
+            <h2>Accomplishments</h2>
+            <div class="article_dots article_dots_archive">
+              <span class="bigDot"></span>
+              <span class="smallDot"></span>
+            </div>
+          </span>
+          <div id="grid-root">
+            <!--
+            
+            ***************************         REACT is here      *******************************
+                   
+                   -->
+          </div>
+        </section>
+      </article>
+      <aside id="aside_right">
+        <span>
+          <div class="aside_dot">
+            <span class="smallDot"></span><span class="bigDot"></span>
+          </div>
+          <span id="aside_right_span">
+            <a
+              class="aside_right_link"
+              href="mailto:zuzanaoupicka@gmail.com"
+              target="_blank"
+            >
+              zuzanaoupicka@gmail.com
+            </a>
+          </span>
+          <div class="aside_line">
+            <span class="line">
+              <span class="drop_top"></span>
+              <span class="drop_second_right"></span>
+              <span class="drop_second_left"></span>
+              <span class="drop_third_right"></span>
+              <span class="drop_third_left"></span>
+            </span>
+            <span class="smallDot"></span>
+            <span class="bigDot"></span>
+            <span class="smallDot"></span>
+          </div>
+        </span>
+      </aside>
+    </main>
+    <footer>
+      <p class="footer_p_smaller">
+        Inspired by
+        <a href="https://brittanychiang.com/" target="_blank">Brittany Chiang</a>
+        's
+        <a href="https://v4.brittanychiang.com/" target="_blank">design</a>
+      </p>
+      <p>⁺₊✧ &nbsp; Made with ♡ by <b>Zuzana Oupická</b> &nbsp; ✧₊⁺</p>
+    </footer>
+
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", async () => {
+        if (this.scrollY > 2) {
+          header.classList.add("header_active");
+        } else if (this.scrollY === 0) {
+          header.classList.remove("header_active");
+        }
+      });
+    </script>
+  </body>
+</html>

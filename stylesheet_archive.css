@@ -1,0 +1,168 @@
+/*Archive*/
+
+#archive_container {
+  padding: 3.5vw 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+}
+
+.archive_button {
+  all: unset;
+
+  cursor: pointer;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  width: 16vw;
+  height: 12vw;
+
+  overflow: hidden;
+}
+
+.archive_button1 {
+  background-image: url("./images/pdf/img/1.png");
+}
+
+.archive_button2 {
+  background-image: url("./images/pdf/img/2.png");
+}
+
+.archive_button3 {
+  background-image: url("./images/pdf/img/3.png");
+}
+
+.archive_div_cover {
+  z-index: 5;
+  position: relative;
+  top: -11vw;
+  left: -17vw;
+  height: 200%;
+  width: 200%;
+  border-radius: 50%;
+  background-color: rgba(1, 1, 1, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  transition: all 800ms;
+  transform: scale(0.1);
+}
+
+.archive_div_cover_active {
+  transform: scale(1.55);
+}
+
+.archive_div {
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+  top: 0.6vw;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.5s;
+}
+
+.archive_div_active {
+  visibility: visible;
+
+  top: 0vw;
+  opacity: 1;
+}
+
+.archive_div a,
+.archive_div h4,
+.archive_div h5 {
+  all: unset;
+  display: block;
+}
+
+.archive_div a {
+  position: relative;
+  margin-top: 0.3vw;
+
+  width: 0.9vw;
+  height: 0.9vw;
+  left: 14.65vw;
+  background-image: url(./images/pdf/2.svg);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.archive_div a:hover {
+  background-image: url(./images/pdf/2p.svg);
+}
+
+.archive_div h5,
+.archive_div h4 {
+  font-family: var(--font);
+  text-align: center;
+}
+.archive_div h4 {
+  color: var(--yellowPink3);
+  font-weight: 600;
+  padding: 4vw 1vw 0 1vw;
+
+  font-size: 1vw;
+}
+
+.archive_div h5 {
+  color: var(--beige);
+  font-weight: 400;
+  padding: 0 1vw;
+
+  font-size: 0.9vw;
+  font-style: italic;
+}
+
+/*
+.modal {
+  position: relative;
+  top: -36.3vw;
+  left: 0;
+  width: 16vw;
+  height: 12vw;
+  background-color: red;
+  transition: all 700ms;
+}*/
+
+.modal {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.8);
+}
+
+.modal button {
+  cursor: pointer;
+  justify-self: end;
+  align-self: end;
+  margin-top: 1vw;
+  margin-right: 1vw;
+  width: 2vw;
+  height: 2vw;
+}
+
+.modal img {
+  width: 80vh;
+  height: 60vh;
+  margin: auto;
+}
