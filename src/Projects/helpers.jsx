@@ -2,7 +2,7 @@
 //   method: "GET",
 //   headers: {
 //     Authorization:
-//       "token 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",
+//       "token gEiEthub_pat_11A4IT67Y0R5CGahaviimi_s1s5yJoA7RKhtMUtc7CdY9XoI4CKoXcm9Y9BZyGCkWdOYYPYDV5waqe83A0",
 //   },
 // };
 
