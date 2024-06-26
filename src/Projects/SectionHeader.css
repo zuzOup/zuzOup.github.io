@@ -17,19 +17,49 @@
   }
 }
 
-.sectionHeader:nth-child(1) .bigDot,
-.sectionHeader:nth-child(1) .smallDot {
-  background-color: var(--yellowPink4);
+section:nth-child(1) {
+  .bigDot,
+  .smallDot {
+    background-color: var(--pink);
+  }
+
+  a:hover {
+    svg {
+      stroke: var(--pink);
+    }
+  }
 }
-.sectionHeader:nth-child(2) .bigDot,
-.sectionHeader:nth-child(2) .smallDot {
-  background-color: var(--yellowPink3);
+
+section:nth-child(2) {
+  .bigDot,
+  .smallDot {
+    background-color: var(--yellowPink3);
+  }
+  a:hover {
+    svg {
+      stroke: var(--yellowPink3);
+    }
+  }
 }
-.sectionHeader:nth-child(3) .bigDot,
-.sectionHeader:nth-child(3) .smallDot {
-  background-color: var(--yellowPink2);
+section:nth-child(3) {
+  .bigDot,
+  .smallDot {
+    background-color: var(--yellowPink2);
+  }
+  a:hover {
+    svg {
+      stroke: var(--yellowPink2);
+    }
+  }
 }
-.sectionHeader:nth-child(4) .bigDot,
-.sectionHeader:nth-child(4) .smallDot {
-  background-color: var(--yellowPink1);
+section:nth-child(4) {
+  .bigDot,
+  .smallDot {
+    background-color: var(--yellowPink1);
+  }
+  a:hover {
+    svg {
+      stroke: var(--yellowPink1);
+    }
+  }
 }

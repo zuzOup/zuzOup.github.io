@@ -7,20 +7,24 @@ import SectionBody from "./SectionBody.jsx";
 const conditions = (str) => {
   const newStr = str.split("**");
   newStr.shift();
+
   const desc = newStr
     .filter((x, i) => i % 2 !== 0)
-    .map((x) => x.split("&nbsp; ")[1])
-    .map((x) => x.split("\n")[0]);
+    .map((x) => x.split("\n")[0])
+    .map((x) => x.trim());
 
   const newArr = newStr
     .filter((x, i) => i % 2 === 0)
+    .map((x) => x.split(" ").join("-"))
+    .map((x) => {
+      return x.includes("[") ? x.split("[")[1].split("]")[0] : x.split(":")[0];
+    })
     .map((x, i) => {
+      console.log(x);
       return {
-        name: x,
-        repo: `https://github.com/zuzOup/The-Odin-Project/tree/main/${x
-          .split(" ")
-          .join("-")}/`,
-        url: `https://zuzoup.github.io/The-Odin-Project/${x.split(" ").join("-")}/`,
+        name: x.split("-").join(" "),
+        repo: `https://github.com/zuzOup/Codecademy/tree/main/${x}/`,
+        url: `https://zuzoup.github.io/Codecademy/${x}/`,
         description: desc[i],
       };
     });
@@ -28,12 +32,12 @@ const conditions = (str) => {
   return newArr;
 };
 
-function Odin() {
+function Codecademy() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     fetchDataMD(
-      "https://api.github.com/repos/zuzoup/The-Odin-Project/contents/README.md",
+      "https://api.github.com/repos/zuzoup/Codecademy/contents/README.md",
       setData,
       conditions
     );
@@ -41,10 +45,10 @@ function Odin() {
 
   return (
     <section>
-      <SectionHeader title={"The Odin Project"} />
+      <SectionHeader title={"Codecademy"} />
       <SectionBody data={data} />
     </section>
   );
 }
 
-export default Odin;
+export default Codecademy;
