@@ -8,12 +8,8 @@
   align-items: center;
   opacity: 1;
 
-  .bigDot {
-    transform: translateY(0.2vw);
-  }
   .smallDot {
     margin: 0 0.35vw;
-    transform: translateY(0.22vw);
   }
 }
 

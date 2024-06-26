@@ -1,6 +1,6 @@
 const auth = {
   headers: {
-    authorization: `token ${import.meta.env.VITE_TOKEN}`,
+    // authorization: `token ${import.meta.env.VITE_TOKEN}`,
   },
 };
 
