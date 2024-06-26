@@ -1,68 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --beige: #fff8ea;
+  --brown: #ad9462;
+  --darkGreen: #005249;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --yellow: rgb(255, 197, 1);
+  --yellowPink1: rgb(255, 190, 81);
+  --yellowPink2: rgb(255, 188, 132);
+  --yellowPink3: rgb(255, 194, 177);
+  --yellowPink4: rgb(253, 161, 144);
+  --pink: rgb(253, 138, 125);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font: "Urbanist", sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  scroll-behavior: smooth;
+
+  overflow-x: hidden;
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
+  align-items: stretch;
+
   min-height: 100vh;
+
+  margin: 0;
+
+  background-color: var(--beige);
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px var(--brown);
+  background-color: var(--beige);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body::-webkit-scrollbar-thumb {
+  /*https://codepen.io/GhostRider/pen/oNvoNv*/
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.2, var(--yellowPink1)),
+    color-stop(0.5, var(--yellowPink2)),
+    color-stop(0.6, var(--yellowPink3))
+  );
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.smallDot {
+  height: 0.3vw;
+  width: 0.3vw;
+  border-radius: 100%;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.bigDot {
+  height: 0.55vw;
+  width: 0.55vw;
+  border-radius: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+main {
+  flex: auto;
+  overflow: hidden;
+
+  display: flex;
+
+  width: 100%;
 }

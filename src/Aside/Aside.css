@@ -1,0 +1,172 @@
+aside {
+  width: 8vw;
+
+  & > div {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1vw;
+
+    height: 100vh;
+    width: 8vw;
+  }
+}
+
+#aside_left {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0 15px;
+
+    list-style-type: none;
+  }
+
+  li {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 100%;
+
+    box-shadow: 0px 0px 0px 3px var(--darkGreen) inset;
+    background-color: var(--beige);
+
+    transition: background 0.1s linear;
+
+    overflow: hidden;
+  }
+
+  li:nth-child(1):hover {
+    background-color: var(--yellowPink3);
+  }
+
+  li:nth-child(2):hover {
+    background-color: var(--yellowPink2);
+  }
+  li:nth-child(3):hover {
+    background-color: var(--yellowPink1);
+  }
+
+  a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    height: 95%;
+    width: 95%;
+  }
+}
+
+/*Aside Right*/
+
+#aside_right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  width: 8vw;
+  height: 18vw;
+
+  a {
+    display: block;
+    transform-origin: 0 0;
+    transform: rotate(90deg) translateY(-15vw);
+    width: 18vw;
+    height: 3vw;
+    margin: 0;
+
+    text-align: center;
+    font-family: var(--font);
+    font-weight: 200;
+    font-size: 1.5vw;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    text-shadow: none;
+    color: var(--darkGreen);
+
+    transition: text-shadow 0.1s linear;
+  }
+
+  a:hover {
+    text-shadow: 0 0 0.02px var(--darkGreen);
+  }
+}
+
+/*Dots and Lines*/
+aside .aside_dot,
+.aside_line {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2vw;
+
+  .smallDot,
+  .bigDot {
+    background-color: var(--yellow);
+  }
+}
+
+.aside_line {
+  padding-bottom: 0.3vw;
+  padding-top: 0.65vw;
+
+  .line {
+    height: 7vw;
+    width: 0.15vw;
+    border-radius: 0.2vw;
+    margin-bottom: 0.1vw;
+    padding-top: 0.4vw;
+    background-color: var(--yellow);
+
+    * {
+      position: absolute;
+      background-color: var(--yellow);
+      border-radius: 10px 150px 30px 150px;
+    }
+
+    .drop_top {
+      width: 0.7vw;
+      height: 0.7vw;
+
+      transform: translateX(-0.28vw) translateY(-0.7vw) rotate(-135deg);
+    }
+
+    .drop_second_left,
+    .drop_second_right {
+      width: 0.5vw;
+      height: 0.5vw;
+    }
+
+    .drop_second_right {
+      transform: translateX(0.16vw) translateY(-0.01vw) rotate(-95deg);
+    }
+
+    .drop_second_left {
+      transform: translateX(-0.5vw) translateY(-0.01vw) rotate(185deg);
+    }
+
+    .drop_third_left,
+    .drop_third_right {
+      width: 0.4vw;
+      height: 0.4vw;
+    }
+
+    .drop_third_right {
+      transform: translateX(0.2vw) translateY(0.65vw) rotate(-80deg);
+    }
+
+    .drop_third_left {
+      transform: translateX(-0.45vw) translateY(0.65vw) rotate(170deg);
+    }
+  }
+}

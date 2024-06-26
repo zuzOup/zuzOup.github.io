@@ -1,0 +1,16 @@
+article {
+  flex: auto;
+  width: auto;
+  height: 100%;
+}
+
+article * h2 {
+  all: unset;
+  font-family: var(--font);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+
+  color: var(--darkGreen);
+  padding: 0 2vw 0 0;
+}
