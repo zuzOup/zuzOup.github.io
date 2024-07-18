@@ -20,7 +20,6 @@ const conditions = (str) => {
       return x.includes("[") ? x.split("[")[1].split("]")[0] : x.split(":")[0];
     })
     .map((x, i) => {
-      console.log(x);
       return {
         name: x.split("-").join(" "),
         repo: `https://github.com/zuzOup/Codecademy/tree/main/${x}/`,
